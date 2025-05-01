@@ -6,33 +6,51 @@
   <title>Dr Stanisław Biber</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #003366;
-    }
-    a {
-      color: #0055aa;
-    }
-    .contact, .links {
-      margin-top: 1rem;
-    }
-    img {
-      max-width: 150px;
-      border-radius: 8px;
-    }
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  h1, h2 {
+    color: #00ccff;
+  }
+
+  a {
+    color: #66ccff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .contact, .links, .publications {
+    margin-top: 1.5rem;
+  }
+
+  img {
+    max-width: 150px;
+    border-radius: 8px;
+  }
+
+  nav a {
+    margin-right: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
   </style>
 </head>
 <body>
-
-  <h1>Dr Stanisław W. Biber</h1>
+  <nav>
+      <a href="#bio">About me</a> |
+      <a href="#publications">Publications</a> |
+      <a href="#links">Links & contact information</a>
+    </nav>
+  <h1 id="bio">Dr Stanisław W. Biber</h1>
 
   <p>
     Dr Stanisław W. Biber is a Research Fellow at the University of Surrey, specialising in the mathematical modelling of neurological conditions and the optimization of deep brain stimulation.
@@ -48,7 +66,10 @@
   </p>
 
   <div class="links">
-    <h2>Links</h2>
+
+  <h2 id="publications">Publications</h2>
+  
+  <h2 id="links">Links</h2>
     <ul>
       <li><a href="https://www.surrey.ac.uk/people/stanislaw-waldemar-biber" target="_blank">University Profile</a></li>
       <li><a href="https://scholar.google.co.uk/citations?user=5iS0dKQAAAAJ" target="blank">Google Scholar Profile</a></li>
