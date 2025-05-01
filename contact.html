@@ -1,0 +1,107 @@
+<!-- contact.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Stanisław Biber</title>
+  <style>
+    body {
+    font-family: Rubik, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #ffffff;
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+  }
+
+  h1, h2 {
+    color: #00ccff;
+    font-family: 'Candara', sans-serif;
+  }
+  h3 {
+    color: #ff4d4d;
+    font-family: 'Candara', sans-serif;
+  }
+  a {
+    color: #66ccff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .contact, .links, .publications {
+    margin-top: 1.5rem;
+  }
+
+  img {
+    max-width: 150px;
+    border-radius: 8px;
+  }
+
+  nav a {
+    margin-right: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="publications.html">Publications</a> |
+  <a href="contact.html">Contact</a>
+</nav>
+<title>Contact</title>
+
+    <h2>Contact</h2>
+
+    You can contact me using the form bellow. 
+
+    <br>
+
+
+    <p style="margin-bottom:2cm;" >Alternatively, you can send me an email: s.biber (at) surrey.ac.uk or s.biber (at) bristol.ac.uk</p>
+
+    <img vspace="pixels">
+
+
+    <form action="https://formspree.io/f/xqaqerky" method="POST">
+      <label for="name">Your name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Your email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="message">Your message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+      <button type="submit">Send</button>
+    </form>
+
+
+
+  
+
+  <h2>External links</h2>
+    <ul>
+      <li><a href="https://www.surrey.ac.uk/people/stanislaw-waldemar-biber" target="_blank">University Profile</a></li>
+      <li><a href="https://scholar.google.co.uk/citations?user=5iS0dKQAAAAJ" target="blank">Google Scholar Profile</a></li>
+      <li><a href="https://www.linkedin.com/in/stanislaw-biber" target="_blank">LinkedIn</a></li>
+      <li><a href="https://blogs.surrey.ac.uk/mathsresearch/" target="_blank">University of Surrey Maths Research Website</a></li>
+      <!-- Add a link to your CV if hosted online -->
+    </ul>
+
+</body>
+</html>
