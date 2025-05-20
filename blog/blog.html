@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Dr Stanisław Biber</title>
+  <title>Blog | Dr Stanisław Biber</title>
   <style>
     body {
     font-family: 'Ubuntu', sans-serif;
@@ -56,8 +56,44 @@
     color: #ffffff;
     font-weight: bold;
   }
+      .post-preview {
+      margin-bottom: 2em;
+    }
+    .snippet {
+      font-size: 0.95em;
+      color: #444;
+    }
+    .preview-container {
+      position: relative;
+      max-height: 12em; /* Adjust height to show 2 paragraphs approx */
+      overflow: hidden;
+      margin-bottom: 1em;
+    }
+
+    .fade-out {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3em;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+      pointer-events: none;
+    }
+
+    .read-more {
+      display: inline-block;
+      color: #00ccff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    } 
   </style>
   <link rel="stylesheet" href="../styles/style.css">
+  <meta charset="UTF-8">
 </head>
 <body>
 <nav>
@@ -70,10 +106,55 @@
 
   This blog will (hopefully) be a place for me to share my research activities with you, as well as some of my general thoughts. These days, I rarely use social media, so this might be a better place to share some of my wider ideas. I do not intend to publish here regularly, but hopefully frequently enough to keep you posted on what I get up to.
 
+  <div class="post-preview">
+    <hr>
+    <h2><a href="SIAM_DS25.html">Some notes from the SIAM DS25 conference</a></h2>
+    <div class="preview-container">
+      <div id="preview-siam" class="snippet">Loading preview…</div>
+      <div class="fade-out"></div>
+    </div>
+    <a href="SIAM_DS25.html" class="read-more">Read more →</a>
+  </div>
 
-  <ul>
-    <li><a href="SIAM_DS25.html">Some notes from the SIAM DS25 conference</a> – May 2025</li>
-    <li><a href="thank_you.html">Thank you...</a> – June 2023</li>
-  </ul>
+  
+  <div class="post-preview">
+    <hr>
+    <h2><a href="thank_you.html">Thank you...</a></h2>
+    <div class="preview-container">
+      <div id="preview-thanks" class="snippet">Loading preview…</div>
+      <div class="fade-out"></div>
+    </div>
+    <a href="thank_you.html" class="read-more">Read more →</a>
+  </div>
+
+
+  <script>
+    function loadSnippet(postURL, elementID) {
+      fetch(postURL)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const paragraphs = [...doc.querySelectorAll('p:not(.no-preview)')];
+
+          if (paragraphs.length > 0) {
+            // Slice first 2 and join their outer HTML
+            const previewHTML = paragraphs.slice(0, 2).map(p => p.outerHTML).join('');
+            document.getElementById(elementID).innerHTML = previewHTML;
+          } else {
+            document.getElementById(elementID).innerText = 'No preview available.';
+          }
+        })
+        .catch(error => {
+          console.error('Error loading preview:', error);
+          document.getElementById(elementID).innerText = 'Preview unavailable.';
+        });
+    }
+
+    loadSnippet('SIAM_DS25.html', 'preview-siam');
+    loadSnippet('thank_you.html', 'preview-thanks');
+  </script>
+
+
 </body>
 </html>
